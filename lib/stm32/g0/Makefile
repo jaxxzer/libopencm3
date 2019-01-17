@@ -39,12 +39,14 @@ ARFLAGS		= rcs
 # specific objs
 OBJS		= rcc.o
 OBJS		+= flash.o
+OBJS		+= exti.o
 OBJS		+= pwr.o
 
 # common/shared objs
 OBJS		+= rcc_common_all.o
 OBJS		+= flash_common_all.o
 OBJS		+= gpio_common_all.o gpio_common_f0234.o
+OBJS		+= exti_common_all.o
 OBJS		+= iwdg_common_all.o
 OBJS		+= timer_common_all.o
 
