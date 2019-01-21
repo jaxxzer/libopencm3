@@ -50,6 +50,7 @@ OBJS		+= exti_common_all.o
 OBJS		+= iwdg_common_all.o
 OBJS		+= timer_common_all.o
 OBJS            += usart_common_all.o usart_common_v2.o
+OBJS            += spi_common_all.o spi_common_v1_frf.o
 
 VPATH +=../:../../cm3:../common
 
