@@ -169,6 +169,10 @@ specific memorymap.h header before including this header file.*/
 #define ADC_CCR_VREFEN			(1 << 22)
 
 
+#ifndef ADC_RESOLUTION_12BIT
+#define ADC_RESOLUTION_12BIT  ADC_CFGR1_RES_12_BIT
+#endif
+
 /* --- Function prototypes ------------------------------------------------- */
 
 BEGIN_DECLS
