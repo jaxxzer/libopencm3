@@ -49,6 +49,7 @@ OBJS		+= gpio_common_all.o gpio_common_f0234.o
 OBJS		+= exti_common_all.o
 OBJS		+= iwdg_common_all.o
 OBJS		+= timer_common_all.o
+OBJS            += usart_common_all.o usart_common_v2.o
 
 VPATH +=../:../../cm3:../common
 
