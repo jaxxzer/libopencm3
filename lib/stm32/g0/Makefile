@@ -56,6 +56,7 @@ OBJS            += adc_common_v2.o
 OBJS            += i2c_common_v2.o
 OBJS            += dma_common_l1f013.o
 OBJS		+= rng_common_v1.o
+OBJS		+= crc_common_all.o
 
 VPATH +=../:../../cm3:../common
 
