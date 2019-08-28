@@ -35,6 +35,9 @@
 
 /* --- RCC registers ------------------------------------------------------- */
 
+/** @defgroup rcc_registers Reset and clock control Register
+@{*/
+
 #define RCC_CR				MMIO32(RCC_BASE + 0x00)
 #define RCC_ICSCR			MMIO32(RCC_BASE + 0x04)
 #define RCC_CFGR			MMIO32(RCC_BASE + 0x08)
@@ -70,9 +73,10 @@
 #define RCC_BDCR			MMIO32(RCC_BASE + 0x5c)
 #define RCC_CSR				MMIO32(RCC_BASE + 0x60)
 
+/**@}*/
 
-
-/* --- RCC_CR values ------------------------------------------------------- */
+/** @defgroup rcc_cr CR Clock control register
+@{*/
 
 #define RCC_CR_PLLRDY			(1 << 25)
 #define RCC_CR_PLLON			(1 << 24)
@@ -100,6 +104,8 @@
 #define RCC_CR_HSIRDY			(1 << 10)
 #define RCC_CR_HSIKERON			(1 << 9)
 #define RCC_CR_HSION			(1 << 8)
+/**@}*/
+
 
 /* --- RCC_ICSCR values ---------------------------------------------------- */
 
