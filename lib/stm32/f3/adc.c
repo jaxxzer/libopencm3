@@ -419,18 +419,16 @@ void adc_start_conversion_injected(uint32_t adc)
  *
  * @param[in] adc Unsigned int32. ADC block register address base
  * @ref adc_reg_base
- * @param[in] threshold Unsigned int8. Upper threshold value
+ * @param[in] threshold. Upper threshold value
  */
 
-void adc_set_watchdog_high_threshold(uint32_t adc, uint8_t threshold)
+void adc_set_watchdog_high_threshold(uint32_t adc, uint16_t threshold)
 {
-	uint32_t reg32 = 0;
+	uint32_t t = (threshold << 16) & ADC_TR1_HT;
 
-	reg32 |= (threshold << 16);
-	reg32 &= ~0xff00ffff; /* Clear all bits above 8. */
-	ADC_TR1(adc) = reg32;
-	ADC_TR2(adc) = reg32;
-	ADC_TR3(adc) = reg32;
+	ADC_TR1(adc) = (ADC_TR1(adc) & ~ADC_TR1_HT) | t;
+	ADC_TR2(adc) = (ADC_TR2(adc) & ~ADC_TR1_HT) | t;
+	ADC_TR3(adc) = (ADC_TR3(adc) & ~ADC_TR1_HT) | t;
 }
 
 /*---------------------------------------------------------------------------*/
@@ -438,18 +436,16 @@ void adc_set_watchdog_high_threshold(uint32_t adc, uint8_t threshold)
  *
  * @param[in] adc Unsigned int32. ADC block register address base
  * @ref adc_reg_base
- * @param[in] threshold Unsigned int8. Lower threshold value
+ * @param[in] threshold. Lower threshold value
  */
 
-void adc_set_watchdog_low_threshold(uint32_t adc, uint8_t threshold)
+void adc_set_watchdog_low_threshold(uint32_t adc, uint16_t threshold)
 {
-	uint32_t reg32 = 0;
+	uint32_t t = threshold & ADC_TR1_LT;
 
-	reg32 = (uint32_t)threshold;
-	reg32 &= ~0xffffff00; /* Clear all bits above 8. */
-	ADC_TR1(adc) = reg32;
-	ADC_TR2(adc) = reg32;
-	ADC_TR3(adc) = reg32;
+	ADC_TR1(adc) = (ADC_TR1(adc) & ~ADC_TR1_LT) | t;
+	ADC_TR2(adc) = (ADC_TR2(adc) & ~ADC_TR1_LT) | t;
+	ADC_TR3(adc) = (ADC_TR3(adc) & ~ADC_TR1_LT) | t;
 }
 
 
