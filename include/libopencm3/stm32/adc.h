@@ -24,7 +24,7 @@
 #       include <libopencm3/stm32/f0/adc.h>
 #elif defined(STM32F1)
 #       include <libopencm3/stm32/f1/adc.h>
-#elif defined(STM32F3)
+#elif defined(STM32F3) || defined(STM32G4)
 #       include <libopencm3/stm32/f3/adc.h>
 #elif defined(STM32F4)
 #       include <libopencm3/stm32/f4/adc.h>
