@@ -26,7 +26,7 @@
 #       include <libopencm3/stm32/f1/iwdg.h>
 #elif defined(STM32F2)
 #       include <libopencm3/stm32/f2/iwdg.h>
-#elif defined(STM32F3)
+#elif defined(STM32F3) || defined(STM32G4)
 #       include <libopencm3/stm32/f3/iwdg.h>
 #elif defined(STM32F4)
 #       include <libopencm3/stm32/f4/iwdg.h>
